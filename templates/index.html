@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/styles.css">
+    
+</head>
+<body>
+    <center>
+    <div class="user-input">
+        <h1>Predict  Price of House in Boston</h1>
+        <form action="{{ url_for('predict')}}" method="post">
+            <input type="text" name="crim" placeholder="per capita crime rate by town" required="required"/><br>
+            <input type="text" name="zn" placeholder="proportion of residential land zoned for lots over 25,000 sq.ft." required="required"/><br>
+            <input type="text" name="indus" placeholder="proportion of non-retail business acres per town." required="required"/><br>
+
+            <input type="text" name="chas" placeholder="Charles River dummy variable (1 if tract bounds river; 0 otherwise)" required="required"/><br>
+            <input type="text" name="nox" placeholder="nitric oxides concentration (parts per 10 million)" required="required"/><br>
+            <input type="text" name="rm" placeholder="average number of rooms per dwelling" required="required"/><br>
+
+            <input type="text" name="age" placeholder=" proportion of owner-occupied units built prior to 1940" required="required"/><br>
+            <input type="text" name="dis" placeholder="weighted distances to five Boston employment centres" required="required"/><br>
+            <input type="text" name="rad" placeholder=" index of accessibility to radial highways" required="required"/><br>
+
+            <input type="text" name="tax" placeholder="full-value property-tax rate per $10,000" required="required"/><br>
+            <input type="text" name="ptratio" placeholder="pupil-teacher ratio by town" required="required"/><br>
+            <input type="text" name="b" placeholder="" required="required"/><br>
+
+            <input type="text" name="lstat" placeholder="% lower status of the population" required="required"/><br>
+        
+
+            <button type="submit" class="btn">Predict</button>
+        </form>
+
+        <br>
+        <br>
+
+        {{prediction_text}}
+    </div>
+</center>
+</body>
+</html>
